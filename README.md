@@ -12,7 +12,7 @@ Creating microservices using frameworks Django and Flask
 - Create virtualenv with python3: `virtualenv env_flango -p python3`
 - Clone repo
 - `cd flango_ms`
-- Start virtual environment: `source env_flango/bin/activate`
+- Start virtual environment: `source ../env_flango/bin/activate`
 - Install the requirements: `pip install -r requirements.txt`
 - Do migrations:
   - `python manage.py makemigrations`
