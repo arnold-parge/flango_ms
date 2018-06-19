@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from django.apps import apps
 from django.conf import settings
 from poc import settings as my_settings
@@ -15,9 +15,16 @@ from app_poc.models import Hit
 
 @app.route("/")
 def index():
-    # return str(5)
     print('inside index')
     return str(Hit.objects.count())
+
+
+@app.route('/hit/<name>')
+def make_hit(name):
+    Hit.objects.create(
+        name=name
+    ).save()
+    return render_template('hit_success.html')
 
 
 if __name__ == '__main__':
